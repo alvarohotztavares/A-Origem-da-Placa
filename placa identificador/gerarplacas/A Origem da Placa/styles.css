@@ -1,0 +1,45 @@
+body {
+    background-image: url("https://conteudo.imguol.com.br/c/noticias/2014/05/04/4ami2014---motoristas-enfrentam-transito-intenso-no-fim-da-tarde-deste-domingo-4-na-rodovia-dos-imigrantes-em-direcao-a-sao-paulo-na-volta-do-feriado-a-estrada-liga-a-capital-ao-litoral-paulista-1399237907855_615x300.jpg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    color: #fff;
+  }
+  
+  input[type="text"] {
+    width: 150px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  #resultado {
+    color: #fff;
+    margin-top: 20px;
+  }
+    
+  

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta de Estado de Origem de Placas de Veículos</title>
+</head>
+<body>
+    <h1>Consulta de Estado de Origem de Placas de Veículos</h1>
+    <label for="placa">Digite a placa do veículo:</label>
+    <input type="text" id="placa" placeholder="Digite a placa (ex: AAA1234)" />
+    <button onclick="consultarEstado()">Consultar</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        const placasPorEstado = {
+            "Paraná": {
+                "inicio": "AAA",
+                "fim": "BEZ"
+            },
+            "São Paulo": {
+                "inicio": "BFA",
+                "fim": "GKI"
+            },
+            "Minas Gerais": [
+                { "placas": "NXX a NYG" },
+                { "placas": "OLO a OMH" },
+                { "placas": "OOV a ORC" },
+                { "placas": "OWH a OXK" },
+                { "placas": "PUA a PZZ" },
+                { "placas": "QMQ a QQZ" },
+                { "placas": "QUA a QUZ" },
+                { "placas": "QWR a QXZ" }
+            ],
+            "Maranhão": {
+                "inicio": "HOL",
+                "fim": "HQE"
+            },
+            "Mato Grosso do Sul": {
+                "inicio": "HQF",
+                "fim": "HTW"
+            },
+            "Ceará": {
+                "inicio": "HTX",
+                "fim": "HZA"
+            },
+            // ... continuar com os outros estados
+        };
+
+        function consultarEstado() {
+            const placaInput = document.getElementById("placa");
+            const placa = placaInput.value.toUpperCase();
+            let resultado = "Placa não encontrada.";
+
+            for (const estado in placasPorEstado) {
+                if (Array.isArray(placasPorEstado[estado])) {
+                    for (const item of placasPorEstado[estado]) {
+                        if (placa >= item.placas.split(" ")[0] && placa <= item.placas.split(" ")[2]) {
+                            resultado = `Placa pertence ao estado de ${estado}.`;
+                            break;
+                        }
+                    }
+                } else {
+                    if (placa >= placasPorEstado[estado].inicio && placa <= placasPorEstado[estado].fim) {
+                        resultado = `Placa pertence ao estado de ${estado}.`;
+                        break;
+                    }
+                }
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>
+
